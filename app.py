@@ -12,7 +12,7 @@ def generateComputerChoice(randomComputerChoice):
 generateComputerChoice(randomComputerChoice)
 
 
-def result(randomComputerChoice):
+def result():
     if randomComputerChoice == userChoice:
         print('Tie')
     elif randomComputerChoice == 'Rock' and userChoice == 'Scissors':
@@ -29,4 +29,4 @@ def result(randomComputerChoice):
         print('You lost')
 
 
-result(randomComputerChoice)
+result()
