@@ -3,13 +3,15 @@ userChoice = input('Enter your choice: ')
 print(userChoice)
 
 
-def generateComputerChoice(randomComputerChoice):
+def generateComputerChoice():
     computerChoice = ['Rock', 'Paper', 'Scissors']
     randomComputerChoice = random.choice(computerChoice)
     print(randomComputerChoice)
 
 
-generateComputerChoice(randomComputerChoice)
+generateComputerChoice()
+
+print(f"\nYou chose {userChoice}, Computer chose {randomComputerChoice}.\n")
 
 
 def result():
@@ -30,3 +32,9 @@ def result():
 
 
 result()
+
+
+while True:
+    playAgain = input('Want to play again? (Yes/No): ')
+    if playAgain == 'Yes':
+        break
