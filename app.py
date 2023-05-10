@@ -1,52 +1,51 @@
 import random
 
-while True:
-    print("Choose your weapon of choice: (Rock, Paper or Scissors)")
-    userChoice = input('Enter your choice: ')
-    availableChoices = ['Rock', 'Paper', 'Scissors']
+user_score = 0
+computer_score = 0
 
-    if userChoice in availableChoices:
-        randomComputerChoice = random.choice(availableChoices)
+while True:
+    # User instructions
+    print("Choose your weapon of choice: (Rock, Paper or Scissors)")
+    # User selects between the three choices
+    user_choice = input('Enter your choice: ')
+    available_choices = ['Rock', 'Paper', 'Scissors']
+
+    if user_choice in available_choices:
+        # Setting how computer selects it's choice randomly
+        random_computer_choice = random.choice(available_choices)
         print(
-            f"\nYou chose {userChoice}, Computer chose {randomComputerChoice}.")
+            f"\nYou chose {user_choice}, Computer chose {random_computer_choice}.")
     else:
         print(
-            f"\n You accidentally entered '{userChoice}', which isn't a valid option!")
+            f"\n You accidentally entered '{user_choice}', which isn't a valid option!")
 
     def result():
-        if randomComputerChoice == userChoice:
+        if random_computer_choice == user_choice:
             print('Tie')
-        elif randomComputerChoice == 'Rock' and userChoice == 'Paper':
+        elif random_computer_choice == 'Rock' and user_choice == 'Paper':
             print('You won! :)')
-        elif randomComputerChoice == 'Paper' and userChoice == 'Scissors':
+        elif random_computer_choice == 'Paper' and user_choice == 'Scissors':
             print('You won! :)')
-        elif randomComputerChoice == 'Scissors' and userChoice == 'Rock':
+        elif random_computer_choice == 'Scissors' and user_choice == 'Rock':
             print('You won! :)')
         else:
             print("You lost! :(")
 
-        # elif randomComputerChoice == 'Rock' and userChoice == 'Scissors':
-            #print('You lost! Rock beats Scissors!')
+        # if youWon(user_choice, random_computer_choice):
+            # return "You picked {} and the computer picked {}. You won!".format(user_choice, random_computer_choice)
 
-        # elif randomComputerChoice == 'Paper' and userChoice == 'Rock':
-            #print('You lost! Paper beats Rock!')
-        # elif randomComputerChoice == 'Scissors' and userChoice == 'Paper':
-            #print('You lost! Scissors beats Paper!')
+        # return "You picked {} and the computer picked {}. You lost!".format(user_choice, random_computer_choice)
 
-        # if youWon(userChoice, randomComputerChoice):
-            # return "You picked {} and the computer picked {}. You won!".format(userChoice, randomComputerChoice)
-
-        # return "You picked {} and the computer picked {}. You lost!".format(userChoice, randomComputerChoice)
-
-          # def youWon(userChoice, randomComputerChoice):
-            # if (randomComputerChoice == 'Rock' and userChoice) == 'Paper' or (randomComputerChoice == 'Paper' and userChoice == 'Scissors') or (randomComputerChoice == 'Scissors' and userChoice == 'Rock'):
+          # def youWon(user_choice, random_computer_choice):
+            # if (random_computer_choice == 'Rock' and user_choice) == 'Paper' or (random_computer_choice == 'Paper' and user_choice == 'Scissors') or (random_computer_choice == 'Scissors' and user_choice == 'Rock'):
             # return True
             # return False
 
     result()
 
-    playAgain = input('Want to play again? (y/n): ')
-    if not playAgain.lower() == 'y':
+    # Option for user to keep playing.
+    play_again = input('Want to play again? (y/n): ')
+    if not play_again.lower() == 'y':
         break
     print()
-print("\nGoodbye")
+print("\nGoodbye!")
