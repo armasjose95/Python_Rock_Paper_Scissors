@@ -1,5 +1,8 @@
 import random
+import math
 
+user_score = 0
+computer_score = 0
 
 while True:
     # User instructions
@@ -18,32 +21,26 @@ while True:
             f"\n You accidentally entered '{user_choice}', which isn't a valid option!")
 
     def result():
-        user_score = 0
-        computer_score = 0
+        global user_score
+        global computer_score
+
         if random_computer_choice == user_choice:
             print('Tie')
-            print(
-                f"\nUser score = {user_score} and Computer Score = {computer_score} ")
         elif random_computer_choice == 'Rock' and user_choice == 'Paper':
             user_score += 1
             print('You won! :)')
-            print(
-                f"\nUser score = {user_score} and Computer Score = {computer_score} ")
         elif random_computer_choice == 'Paper' and user_choice == 'Scissors':
             user_score += 1
             print('You won! :)')
-            print(
-                f"\nUser score = {user_score} and Computer Score = {computer_score} ")
         elif random_computer_choice == 'Scissors' and user_choice == 'Rock':
             user_score += 1
             print('You won! :)')
-            print(
-                f"\nUser score = {user_score} and Computer Score = {computer_score} ")
         else:
             computer_score += 1
             print("You lost! :(")
-            print(
-                f"\nUser score = {user_score} and Computer Score = {computer_score} ")
+
+        print(
+            f"\nUser score = {user_score} and Computer Score = {computer_score} ")
 
     result()
 
